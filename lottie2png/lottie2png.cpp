@@ -6,7 +6,6 @@
 #include<vector>
 #include<array>
 #include <iostream>
-#include <format>
 #include <string>
 #ifndef _WIN32
 #include<libgen.h>
