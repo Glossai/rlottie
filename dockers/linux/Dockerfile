@@ -13,8 +13,7 @@ RUN mkdir $BASE_DIR
 COPY . $BASE_DIR/
 RUN mkdir $BASE_DIR/build
 WORKDIR $BASE_DIR/build
-RUN cmake ..
-RUN make
-RUN make install
+RUN cmake -DCMAKE_BUILD_TYPE=RELEASE ..
+RUN cmake --build /home/rlottie/build --target lottie2png --config RELEASE
 
 ENTRYPOINT [ "sh" ]
