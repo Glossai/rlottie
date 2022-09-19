@@ -1,0 +1,8 @@
+@ECHO OFF
+:: location of cross-compile\linux\Dockerfile  :
+cd C:\glossai\rlottie-glossai
+docker build -f cross-compile\linux\Dockerfile --tag rlottie-linux .
+docker run --name docker_name -it  --rm rlottie-linux
+
+docker cp docker_name:\home\rlottie\build\librlottie.so.0.2 C:\docker_tests\local_dir_to_volume
+docker cp docker_name:\home\rlottie\build\lottie2png C:\docker_tests\local_dir_to_volume
